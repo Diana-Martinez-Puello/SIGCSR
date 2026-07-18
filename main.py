@@ -1,14 +1,14 @@
 import logging
 from abc import ABC, abstractmethod
 
-# CONFIGURACION DEL SISTEMA DE LOGS
+# Configuracion del sistema de registros logs
 logging.basicConfig(
     filename='sistema_errores.log',
     level=logging.ERROR,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-# MANEJO AVANZADO DE EXCEPCIONES
+# manejo avanzado de exepciones
 class SistemaError(Exception):
     pass
 
@@ -21,7 +21,7 @@ class OperacionNoPermitidaError(SistemaError):
 class ServicioNoDisponibleError(SistemaError):
     pass
 
-# ENTIDADES BASE Y CLASES ABSTRACTAS  
+# Entidades base y clases abstractas 
 class EntidadGeneral(ABC):
     @abstractmethod
     def validar_estado(self):
@@ -109,7 +109,7 @@ class AsesoriaEspecializada:
     def obtener_descripcion(self):
         return f"Asesoría en {self.area_experiencia} - {self._nombre}."
 
-# GESTION DE RESERVAS Y METODOS SOBRECARGADOS
+# Gestion de reservas y metodos sobrecargados
 class Reserva:
     def __init__(self, id_reserva, cliente, servicio, duracion):
         if not isinstance(cliente, Cliente):
@@ -149,7 +149,7 @@ class Reserva:
         print(f"Reserva {self.id_reserva} ha sido cancelada.")
 
 
-# SIMULACION DEL SISTEMA: 10 OPERACIONES
+# 10 OPERACIONES
 def ejecutar_simulacion():
     print("- INICIANDO SIMULACIÓN DE SOFTWARE FJ -\n")
     
