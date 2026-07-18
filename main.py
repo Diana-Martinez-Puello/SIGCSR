@@ -48,12 +48,13 @@ class Cliente(EntidadGeneral):
     def __str__(self):
         return f"{self.__nombre} (ID: {self.__identificacion})"
 
-class Servicio:
+class Servicio(EntidadGeneral):
     def __init__(self, codigo, nombre, tarifa_base):
         self._codigo = codigo
         self._nombre = nombre
         self._tarifa_base = tarifa_base
         self.validar_estado()
+     
 
     def validar_estado(self):
         if self._tarifa_base < 0:
