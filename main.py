@@ -69,7 +69,7 @@ class Servicio(EntidadGeneral):
         pass
 
 # POLIMORFISMO
-class ReservaSalas:
+class ReservaSalas(Servicio):
     def __init__(self, codigo, nombre, tarifa_base, capacidad):
         super().__init__(codigo, nombre, tarifa_base)
         self.capacidad = capacidad
@@ -80,7 +80,7 @@ class ReservaSalas:
     def obtener_descripcion(self):
         return f"Sala '{self._nombre}' para {self.capacidad} personas."
 
-class AlquilerEquipos:
+class AlquilerEquipos(Servicio):
     def __init__(self, codigo, nombre, tarifa_base, requiere_seguro):
         super().__init__(codigo, nombre, tarifa_base)
         self.requiere_seguro = requiere_seguro
@@ -95,7 +95,7 @@ class AlquilerEquipos:
         seguro = "con seguro" if self.requiere_seguro else "sin seguro"
         return f"Equipo '{self._nombre}' ({seguro})."
 
-class AsesoriaEspecializada:
+class AsesoriaEspecializada(Servicio):
     def __init__(self, codigo, nombre, tarifa_base, area_experiencia):
         super().__init__(codigo, nombre, tarifa_base)
         self.area_experiencia = area_experiencia
